@@ -15,13 +15,15 @@
     {% if prism == true %}
       <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
     {% endif %}
+    <link rel="stylesheet" href="/assets/main.bundle.css?version={{ utils.version }}">
+    <script defer="defer" src="/assets/main.bundle.js?version={{ utils.version }}"></script>
   </head>
   <body>
-    {% include "./partials/navbar.html" %}
+
 
     {{ content | safe }}
 
-    {% include "./partials/footer.html" %}
+
 
     <script src="/static/js/alpine.js"></script>
 
