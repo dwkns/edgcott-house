@@ -11,24 +11,6 @@
 
         <!-- Netlify Identity Widget -->
         <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        <script>
-            console.log(`script running`);
-           if (window.netlifyIdentity) {
-             console.log(`Inside window.netlifyIdentity`);
-             
-             window.netlifyIdentity.on("init", user => {
-               console.log(`Inside init`);
-               if (!user) {
-                 console.log(`Not user`);
-                 
-                 window.netlifyIdentity.on("login", () => {
-                   console.log(`on login`);
-                   
-                   document.location.href = "/admin/";
-                 });
-               }
-             });
-           }
-         </script>
+       
     </body>
 </html>
