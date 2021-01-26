@@ -2,6 +2,8 @@ backend:
   # Use netlify identity as backend
   name: git-gateway
   branch: master
+
+
   ### enable below lines for github integration ###npx netlify-cms-proxy-server
   # name: github
   # repo: surjithctly/neat-starter
@@ -11,7 +13,7 @@ public_folder: "/static/img"
 site_url: https://happy-colden-825498.netlify.app
 
 # Please run "npx netlify-cms-proxy-server" for local backend
-# local_backend: true
+local_backend: true
 # publish_mode: editorial_workflow
 collections:
   - label: "Settings"
@@ -19,30 +21,6 @@ collections:
     editor:
       preview: false
     files:
-      - label: "Navigation"
-        name: "items"
-        file: "src/_data/navigation.yaml"
-        fields:
-          - label: Nav Items
-            name: items
-            widget: list
-            allow_add: false
-            collapsed: false
-            fields:
-              - { label: Title, name: text, widget: string }
-              - { label: URL, name: url, widget: string }
-      - label: "Quick Links"
-        name: "links"
-        file: "src/_data/quicklinks.yaml"
-        fields:
-          - label: Nav Items
-            name: links
-            widget: list
-            collapsed: false
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: URL, name: url, widget: string }
-              - { label: Description, name: desc, widget: string }
       - label: "Meta Settings"
         name: "settings"
         file: "src/_data/settings.yaml"
@@ -50,3 +28,14 @@ collections:
           - { label: Name, name: name, widget: string }
           - { label: Author, name: author, widget: string }
           - { label: URL, name: url, widget: string }
+  - label: "Pages"
+    name: "Pages"
+    editor:
+      preview: false
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "src/index.json"
+        fields:
+          - { label: 'The field label', name: someVar, widget: string, hint: "Some instructions here" }
+
